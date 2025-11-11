@@ -39,7 +39,7 @@ export default function TodoistPage2() {
 
   const deleteTodo = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
-  };
+};
 
 return (
     <div className={styles.container}>
