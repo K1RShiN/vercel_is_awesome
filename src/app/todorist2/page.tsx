@@ -41,7 +41,7 @@ export default function TodoistPage2() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  return (
+return (
     <div className={styles.container}>
       <h1>TODOリスト</h1>
 
