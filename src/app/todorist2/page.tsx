@@ -1,24 +1,17 @@
 "use client";
-
 import React, { useState } from 'react';
 import styles from './page.module.css';
-
-// ToDoアイテムの型定義
 interface TodoItem {
   id: number;
   text: string;
   isCompleted: boolean;
 }
-
 const STORAGE_KEY = "todorist_todos";
-
 export default function TodoistPage2() {
   const [todos, setTodos] = useState<TodoItem[]>([]);
   const [newTodoText, setNewTodoText] = useState<string>('');
-
   const addTodo = () => {
     if (newTodoText.trim() === '') return;
-
     const newTodo: TodoItem = {
       id: Date.now(),
       text: newTodoText,
@@ -28,7 +21,6 @@ export default function TodoistPage2() {
     setTodos([...todos, newTodo]);
     setNewTodoText('');
   };
-
   const toggleTodo = (id: number) => {
     setTodos(
       todos.map((todo) =>
@@ -36,11 +28,9 @@ export default function TodoistPage2() {
       )
     );
   };
-
   const deleteTodo = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
 };
-
 return (
     <div className={styles.container}>
       <h1>TODOリスト</h1>
