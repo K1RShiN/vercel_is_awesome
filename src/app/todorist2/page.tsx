@@ -47,36 +47,24 @@ export default function TodoistPage2() {
 
       {/* 入力フォーム */}
       <div className={styles.inputContainer}>
-        <div style={{ flex: 1 }}>
-          <label htmlFor="todo-input" className={styles.label}>
-            新しいTODO
-          </label>
-          <input
-            id="todo-input"
-            type="text"
-            value={newTodoText}
-            onChange={(e) => setNewTodoText(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                addTodo();
-              }
-            }}
-            className={styles.todoInput}
-            placeholder="TODO を入力してください"
-            title="新しいTODOを入力してEnterキーを押す"
-            aria-label="新しいTODO入力フィールド"
-          />
-        </div>
-        <button
-          onClick={addTodo}
-          className={styles.addButton}
-          title="TODOを追加"
-          aria-label="TODOを追加ボタン"
-          style={{ alignSelf: 'flex-end' }}
-        >
-          追加
-        </button>
-      </div>
+
+      <div className={styles.inputFieldWrapper}> {/* 🌟 styles.inputFieldWrapper を適用 */}
+          <label htmlFor="todo-input" className={styles.label}>
+            新しいTODO
+          </label>
+          <input
+            // ...
+          />
+        </div>
+        <button
+          onClick={addTodo}
+          className={`${styles.addButton} ${styles.alignButtonBottom}`} {/* 🌟 styles.alignButtonBottom を適用 */}
+          title="TODOを追加"
+          aria-label="TODOを追加ボタン"
+        >
+          追加
+        </button>
+      </div>
 
       {/* TODOリスト */}
       <ul className={styles.todoList}>

@@ -126,3 +126,11 @@
   white-space: nowrap;
   border: 0;
 }
+
+.inputFieldWrapper {
+  flex-grow: 1;
+}
+
+.alignButtonBottom {
+  align-self: flex-end;
+}
