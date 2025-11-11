@@ -1,0 +1,164 @@
+/* フィルターボタンのグループ */
+.filterGroup {
+  margin: 15px 0 20px;
+  display: flex;
+  gap: 8px; /* ボタン間のスペース */
+}
+
+/* フィルターボタンの共通スタイル */
+.filterButton {
+  padding: 8px 15px;
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* 選択中のフィルターボタンのスタイル */
+.activeFilter {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.filterButton:hover:not(.activeFilter) {
+  background-color: #e9f0ff;
+}
+
+.container {
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.addButton {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: gray;
+}
+
+.todoList {
+  margin-top: 2rem;
+  color: gray;
+}
+
+.todoItem {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.todoItem.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.checkbox {
+  margin-left: 1rem;
+}
+
+.deleteButton {
+  margin-left: 1rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.todoInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: gray;
+  background-color: #d8d8d8;
+}
+
+
+
+/* テーマ切り替えボタンのスタイル */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.themeToggle {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.themeToggle:hover {
+    background-color: #e0e0e0;
+}
+
+/* -------------------------ダークモード (darkThemeクラス) の定義------------------------- */
+
+.darkTheme {
+    background-color: #000000;
+    color: #f9f9f9; /* テキスト全体を明るく */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* 影を強調 */
+}
+
+/* ダークモード内の要素 */
+.darkTheme h1 {
+    color: #fff;
+}
+
+.darkTheme .todoInput {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;
+}
+
+.darkTheme .todoInput::placeholder {
+    color: #bbb;
+}
+
+.darkTheme .todoItem {
+    background-color: #444;
+    border-left: 5px solid #00aaff; /* 未完了の強調色 (明るめ) */
+    color: #fff;
+}
+
+.darkTheme .completed {
+    border-left-color: #5cb85c;
+    color: #aaa;
+}
+
+.darkTheme .checkboxLabel {
+    color: #fff;
+}
+
+.darkTheme .themeToggle {
+    background-color: #555;
+    color: #fff;
+    border-color: #666;
+}
+.darkTheme .themeToggle:hover {
+    background-color: #666;
+}
+
+/* フィルターボタンもダークテーマに合わせる */
+.darkTheme .filterButton {
+    border: 1px solid #00aaff;
+    color: #00aaff;
+}
+
+.darkTheme .filterButton:hover:not(.activeFilter) {
+    background-color: #222;
+}
+
+.darkTheme .activeFilter {
+    background-color: #00aaff;
+    color: #333; /* ボタンのテキスト色を暗くして見やすく */
+    border-color: #0088cc;
+}
