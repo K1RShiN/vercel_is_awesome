@@ -1,6 +1,9 @@
+// src/app/posts/[id]/page.js
+
+// fetchPostData関数はページコンポーネント内で使用するため、exportは不要です
 async function fetchPostData(id) {
 
-    console.log(`[SSR] 投稿ID: &{id} のデータをサーバー側でフェッチ中...`);
+    console.log(`[SSR] 投稿ID: ${id} のデータをサーバー側でフェッチ中...`);
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     const dummyPosts = {
@@ -13,5 +16,28 @@ async function fetchPostData(id) {
         return null;
     }
     return { id, ...post };
+}
+
+// ページコンポーネントを定義し、デフォルトエクスポートします
+// Next.jsは、paramsを受け取って動的ルートのID（id）を渡します
+export default async function PostDetailPage({ params }) {
+    
+    const post = await fetchPostData(params.id);
+
+    if (!post) {
+        return (
+            <main style={{ padding: '20px' }}>
+                <h1>404 - 投稿が見つかりません</h1>
+                <p>指定されたIDの投稿は存在しません。</p>
+            </main>
+        );
+    }
+
+    return (
+        <main style={{ padding: '20px' }}>
+            <h1>{post.title}</h1>
+            <p style={{ marginTop: '20px' }}>{post.content}</p>
+        </main>
+    );
 }
 
