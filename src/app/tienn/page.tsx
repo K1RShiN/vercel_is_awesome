@@ -2,9 +2,16 @@
 
 import { useState, useEffect } from 'react'
 
+type Todo = {
+    userId: number;
+    id: number;
+    title: string;
+    completed: boolean;
+};
+
 export default function Page() {
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
+    const [data, setData] = useState<Todo | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] =useState(true);
 
     useEffect(() => {
