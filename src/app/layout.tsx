@@ -3,6 +3,8 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Analytics } from "@vercel/analytics/react";
 
+import { SpeedInsights } from "@vercel/speedinsights/next";
+
 const geistSans = GeistSans;
 
 const geistMono = GeistMono;
@@ -24,6 +26,7 @@ export default function RootLayout({
       >
         {children}
         <Analytics /> {/* この行を追加 */}
+        <SpeedInsights />
       </body>
     </html>
   );
