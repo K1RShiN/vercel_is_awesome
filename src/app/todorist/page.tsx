@@ -111,7 +111,9 @@ function TodoristPage() {
 
     <div className={`${styles.container} ${theme === 'dark' ? styles.darkTheme : ''}`}>
       <div className={styles.header}>
-      <h1>ToDoリスト</h1>
+      <h1 className={styles.title}>
+            {process.env.NEXT_PUBLIC_APP_TITLE || "TODOリスト"}
+      </h1>
         <button 
                 onClick={toggleTheme} 
                 className={styles.themeToggle}
