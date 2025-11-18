@@ -3,9 +3,9 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Analytics } from "@vercel/analytics/react";
 
-const geistSans = GeistSans();
+const geistSans = GeistSans;
 
-const geistMono = GeistMono();
+const geistMono = GeistMono;
 
 export const metadata: Metadata = {
   title: "Create Next App",
